@@ -1,5 +1,6 @@
 <h1>Titulo da Pagina</h1>
 <!-- <app-title></app-title>
 <app-title titleProps="valor vindo por props do componente pai"></app-title> -->
-<app-check></app-check>
+<app-check *ngIf="isAlive"></app-check> <br/>
+<button (click)="killCheckComponent()"> destruir </button>
 <router-outlet></router-outlet>

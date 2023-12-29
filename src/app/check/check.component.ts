@@ -1,11 +1,11 @@
-import { Component, OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-check',
   templateUrl: './check.component.html',
   styleUrls: ['./check.component.css']
 })
-export class CheckComponent implements OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit {
+export class CheckComponent implements OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy {
 
   quantidade: number = 0;
 
@@ -36,6 +36,10 @@ export class CheckComponent implements OnInit, DoCheck, AfterContentChecked, Aft
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked: Executado após cada verificação da visualização do componente.');
   }
+
+ngOnDestroy(): void {
+  console.log("Componente morreu")
+}
 
   incrementar() {
     this.quantidade += 1
